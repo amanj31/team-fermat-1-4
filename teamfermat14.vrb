@@ -1,0 +1,12 @@
+\frametitle{Challenge Solutions}
+\begin{enumerate}
+        \item To find the probability that $x+y+z\le 3$, we want to find the ratio of the volume of this pyramid to the volume of the whole cube. The general volume of a pyramid is $\frac{1}{3}\times\text{base $\times$ height}$. In this case, if we choose the triangle formed by $(0,0,0)$, $(3,0,0)$, and $(0,3,0)$ to be the base, the base is an isosceles right triangle with legs that are $3$ units long. The apex points $(0,0,3)$ is $3$ units above the base, so the height is $3$. Thus,
+        \begin{align*}
+            \text{Volume of Pyramid} &= \frac{1}{3}\times\text{base $\times$ height}\\
+            &=\frac{1}{3}\times \left(\frac{1}{2}\cdot3\cdot3\right)\times 3\\
+            &=\frac{27}{6}=\frac{9}{2}.
+        \end{align*}\\
+        \bigskip
+        The entire cube of points where $0\le x,y,z\le 3$ is a cube with edge length $3$, so its volume is $27$. Finally, the probability that $x+y+z\le 3$ is $\frac{9/2}{27}=\frac{1}{6}$.
+    \end{enumerate}
+

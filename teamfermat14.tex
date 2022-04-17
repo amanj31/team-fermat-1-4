@@ -1,0 +1,1763 @@
+
+\documentclass[9pt]{beamer}
+
+\mode<presentation> {
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} 
+\setbeamertemplate{footline}[page number] 
+
+%\setbeamertemplate{navigation symbols}{} 
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[inline]{asymptote}
+
+
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+
+%	TITLE PAGE
+
+\title[Short title]{Counting $\&$ Probability: Practice $\&$ Review } % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Aman Jain} % Your name
+\institute[MATHCOUNTS Fermat Class] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+MATHCOUNTS Fermat Class \\ % Your institution for the title page
+\medskip
+\textit{} % Your email address
+}
+\date{January 4, 2022} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+
+%	PRESENTATION SLIDES
+
+%% the [t] makes it top-to-bottom not center aligned w.r.t. the vertical direction
+
+\begin{frame}[t]{Warmup Problems} 
+    \begin{enumerate}
+        \item If a fair 4-sided die is rolled $7$ times, what is the probability that no two consecutive rolls are the same?
+        \item In a certain town, the weather each day depends on the previous day. If it rained yesterday, there is a $50\%$ of rain today. If it didn't rain yesterday, there is a $20\%$ chance of rain today. Given that it rained on January 1st, 2022, find the probability that
+            \begin{itemize}
+                \item it rained yesterday (January 3rd)?
+                \item it will rain today (January 4th)?
+            \end{itemize}
+        \item How many ways can ten identical apples be distributed among four people, if each person must have at least one apple?
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Warmup Solutions}
+    \begin{enumerate}
+        \item For every roll after the first one, there is a $3/4$ chance that it will not be the same as the previous roll. Since the last six rolls are all independent events, the probability that no two consecutive rolls are equal is $\left(\frac{3}{4}\right)^6=\frac{729}{4096}$.
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+ 
+\begin{frame}[t]{Warmup Solutions}
+    \begin{enumerate}
+        \item For every roll after the first one, there is a $3/4$ chance that it will not be the same as the previous roll. Since the last six rolls are all independent events, the probability that no two consecutive rolls are equal is $\left(\frac{3}{4}\right)^6=\frac{729}{4096}$.
+        \item First, note that the probability it rained on January 2nd is $1/2$. Then, by adding up the cases for the weather on January 2nd, the probability that it rained on January 3rd is $\frac{1}{2}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{5}=\frac{7}{20}$.\\
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+ 
+\begin{frame}[t]{Warmup Solutions}
+    \begin{enumerate}
+        \item For every roll after the first one, there is a $3/4$ chance that it will not be the same as the previous roll. Since the last six rolls are all independent events, the probability that no two consecutive rolls are equal is $\left(\frac{3}{4}\right)^6=\frac{729}{4096}$.
+        \item First, note that the probability it rained on January 2nd is $1/2$. Then, by adding up the cases for the weather on January 2nd, the probability that it rained on January 3rd is $\frac{1}{2}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{5}=\frac{7}{20}$.\\
+        Similarly, the probability of rain today is therefore $\frac{7}{20}\cdot \frac{1}{2}+\frac{13}{20}\cdot\frac{1}{5}=\frac{61}{200}$.
+        
+    \end{enumerate}
+    
+\end{frame}
+ 
+\begin{frame}[t]{Warmup Solutions}
+    \begin{enumerate}
+        \item For every roll after the first one, there is a $3/4$ chance that it will not be the same as the previous roll. Since the last six rolls are all independent events, the probability that no two consecutive rolls are equal is $\left(\frac{3}{4}\right)^6=\frac{729}{4096}$.
+        \item First, note that the probability it rained on January 2nd is $1/2$. Then, by adding up the cases for the weather on January 2nd, the probability that it rained on January 3rd is $\frac{1}{2}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{5}=\frac{7}{20}$.\\
+        Similarly, the probability of rain today is therefore $\frac{7}{20}\cdot \frac{1}{2}+\frac{13}{20}\cdot\frac{1}{5}=\frac{61}{200}$.
+        \item Let the number of apples each person gets be $a+1, b+1, c+1, \text{ and } d+1$, such that $a,b,c,d$ are all nonnegative integers. Then,
+        $$(a+1)+(b+1)+(c+1)+(d+1)=10\implies a+b+c+d=6.$$ By Stars and Bars, the number of solutions to this is $\binom{9}{3}=84$.
+        
+    \end{enumerate}
+    
+\end{frame}
+ 
+\begin{frame}[fragile, t]{Expected Value}
+    \begin{itemize}
+        \item Given Any event $X$ with possible outcomes $x_1,x_2,\ldots,x_n$, each having probability $p_1,p_2,\ldots,p_n$, the expected value of $X$ (which can be represented by $\mathbb{E}(X)$) is equal to $x_1p_1+x_2p_2+\cdots+x_np_n$.
+        
+        
+    \end{itemize}
+    
+    
+\end{frame}
+
+
+\begin{frame}[fragile, t]{Expected Value}
+    \begin{itemize}
+        \item Given Any event $X$ with possible outcomes $x_1,x_2,\ldots,x_n$, each having probability $p_1,p_2,\ldots,p_n$, the expected value of $X$ (which can be represented by $\mathbb{E}(X)$) is equal to $x_1p_1+x_2p_2+\cdots+x_np_n$.
+        \begin{itemize}
+            \item For example, if $X$ is the roll of a standard die, then $\mathbb{E}(X)=1\cdot\frac{1}{6}+2\cdot\frac{1}{6}+3\cdot\frac{1}{6}+4\cdot\frac{1}{6}+5\cdot\frac{1}{6}+6\cdot\frac{1}{6}=\frac{7}{2}$. In this case, all probabilities are the same, so the expected value is just the average of the possible outcomes.
+           
+                
+        \end{itemize}
+        
+    \end{itemize}
+    
+    
+\end{frame}
+
+
+\begin{frame}[fragile, t]{Expected Value}
+    \begin{itemize}
+        \item Given Any event $X$ with possible outcomes $x_1,x_2,\ldots,x_n$, each having probability $p_1,p_2,\ldots,p_n$, the expected value of $X$ (which can be represented by $\mathbb{E}(X)$) is equal to $x_1p_1+x_2p_2+\cdots+x_np_n$.
+        \begin{itemize}
+            \item For example, if $X$ is the roll of a standard die, then $\mathbb{E}(X)=1\cdot\frac{1}{6}+2\cdot\frac{1}{6}+3\cdot\frac{1}{6}+4\cdot\frac{1}{6}+5\cdot\frac{1}{6}+6\cdot\frac{1}{6}=\frac{7}{2}$. In this case, all probabilities are the same, so the expected value is just the average of the possible outcomes.
+            \item If $X$ is the sum of the rolls of two standard dice, then
+            \begin{gather*}
+                \mathbb{E}(X)=2\cdot\frac{1}{36}+3\cdot\frac{2}{36}+4\cdot\frac{3}{36}+5\cdot\frac{4}{36}+6\cdot\frac{5}{36}+7\cdot\frac{6}{36}+8\cdot\frac{5}{36} \\ +\ 9\cdot\frac{4}{36}+10\cdot\frac{3}{36}  +11\cdot\frac{2}{36}+12\cdot\frac{1}{36}=7.
+            \end{gather*}\\
+            Note that in this case, the probabilities for each outcome were not the same.
+                
+        \end{itemize}
+        
+    \end{itemize}
+    
+    
+\end{frame}
+
+
+\begin{frame}[fragile, t]{Expected Value}
+    \begin{itemize}
+        \item Given Any event $X$ with possible outcomes $x_1,x_2,\ldots,x_n$, each having probability $p_1,p_2,\ldots,p_n$, the expected value of $X$ (which can be represented by $\mathbb{E}(X)$) is equal to $x_1p_1+x_2p_2+\cdots+x_np_n$.
+        \begin{itemize}
+            \item For example, if $X$ is the roll of a standard die, then $\mathbb{E}(X)=1\cdot\frac{1}{6}+2\cdot\frac{1}{6}+3\cdot\frac{1}{6}+4\cdot\frac{1}{6}+5\cdot\frac{1}{6}+6\cdot\frac{1}{6}=\frac{7}{2}$. In this case, all probabilities are the same, so the expected value is just the average of the possible outcomes.
+            \item If $X$ is the sum of the rolls of two standard dice, then
+            \begin{gather*}
+                \mathbb{E}(X)=2\cdot\frac{1}{36}+3\cdot\frac{2}{36}+4\cdot\frac{3}{36}+5\cdot\frac{4}{36}+6\cdot\frac{5}{36}+7\cdot\frac{6}{36}+8\cdot\frac{5}{36} \\ +\ 9\cdot\frac{4}{36}+10\cdot\frac{3}{36}  +11\cdot\frac{2}{36}+12\cdot\frac{1}{36}=7.
+            \end{gather*}\\
+            Note that in this case, the probabilities for each outcome were not the same.
+                
+        \end{itemize}
+        \item These two examples have an interesting connection: the expected value of the roll of two dice ($7$) is twice the expected value of the roll of one die ($7/2$). This is called \textbf{Linearity of Expectation}. 
+        
+    \end{itemize}
+    
+    
+\end{frame}
+
+
+\begin{frame}[fragile, t]{Expected Value}
+    \begin{itemize}
+        \item Given Any event $X$ with possible outcomes $x_1,x_2,\ldots,x_n$, each having probability $p_1,p_2,\ldots,p_n$, the expected value of $X$ (which can be represented by $\mathbb{E}(X)$) is equal to $x_1p_1+x_2p_2+\cdots+x_np_n$.
+        \begin{itemize}
+            \item For example, if $X$ is the roll of a standard die, then $\mathbb{E}(X)=1\cdot\frac{1}{6}+2\cdot\frac{1}{6}+3\cdot\frac{1}{6}+4\cdot\frac{1}{6}+5\cdot\frac{1}{6}+6\cdot\frac{1}{6}=\frac{7}{2}$. In this case, all probabilities are the same, so the expected value is just the average of the possible outcomes.
+            \item If $X$ is the sum of the rolls of two standard dice, then
+            \begin{gather*}
+                \mathbb{E}(X)=2\cdot\frac{1}{36}+3\cdot\frac{2}{36}+4\cdot\frac{3}{36}+5\cdot\frac{4}{36}+6\cdot\frac{5}{36}+7\cdot\frac{6}{36}+8\cdot\frac{5}{36} \\ +\ 9\cdot\frac{4}{36}+10\cdot\frac{3}{36}  +11\cdot\frac{2}{36}+12\cdot\frac{1}{36}=7.
+            \end{gather*}\\
+            Note that in this case, the probabilities for each outcome were not the same.
+                
+        \end{itemize}
+        \item These two examples have an interesting connection: the expected value of the roll of two dice ($7$) is twice the expected value of the roll of one die ($7/2$). This is called \textbf{Linearity of Expectation}. 
+        \item Linearity of expectation means that for events $X_1,X_2,\ldots,X_k$, the expected value of the sum of these events is the sum of the expected value of each event, for both independent and dependent events. This can be written as
+        $$\mathbb{E}(X_1+X_2+\cdots+X_k)=\mathbb{E}(X_1)+\mathbb{E}(X_2)+\cdots+\mathbb{E}(X_k).$$
+    \end{itemize}
+    
+    
+\end{frame}
+
+\begin{frame}[fragile, t]{Expected Value Practice Problems}
+    \begin{enumerate}
+        \item On the number line, the points $1,2,3,\ldots,9,10$ are marked. Of these ten points, two distinct points are chosen randomly, with each point being equally likely to be chosen. What is the expected value of the distance between the two points?
+        \begin{center}
+            \begin{asy}
+                import graph;
+                size(160);
+                Label f; 
+                f.p=fontsize(6); 
+                xaxis(-1,12,Ticks(f, 13)); 
+                draw((-2.5,0)--(13.5,0), Arrows);
+                for(int i=1; i<11; ++i){
+                    dot((i, 0));
+                }
+
+            \end{asy}
+        \end{center}
+        \item There is a $5\times5\times5$ cube, which is painted red on all six of its faces. The cube is then cut into $125$ unit cubes. One of these unit cubes is chosen at random, with each of them being equally likely to be chosen. What is the expected number of red faces on this unit cube?
+        \item Stacia has five pairs of gloves, each pair being a different color. She washed them all and now wants to match up the pairs. She randomly pairs each left glove with a right glove. If all five pairs do not match, she randomly pairs them all up again, and repeats until all five pairs do match. What is the expected number of times she will pair the gloves until all of them match?
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+        \item The minimum distance is $1$, and the maximum distance is $9$. We will use casework to find the probability of each distance from $1$ to $9$.\\
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+        \item The minimum distance is $1$, and the maximum distance is $9$. We will use casework to find the probability of each distance from $1$ to $9$.\\
+        \bigskip
+        If the two points have a distance $d$, then we can let the smaller number be $x$ and the larger number be $x+d$. Then, $1\le x$ and $x+d\le 10$, so $1\le x\le 10-d$. This has $10-d$ integer solutions for $x$. The total number of pairs of distinct points that can be chosen is $\binom{10}{2}=45$, so the probability that the two points have a distance $d$ between each other is $\frac{10-d}{45}$. Using the formula for expected value $\mathbb{E}(X)=x_1p_1+x_2p_2+\cdots+x_np_n$, the expected value of $d$ is the sum of $d\cdot\frac{10-d}{45}$ as $d$ ranges from $1$ to $9$. This can be rewritten as
+        $$\frac{1\cdot9}{45}+\frac{2\cdot8}{45}+\frac{3\cdot7}{45}+\cdots+\frac{8\cdot2}{45}+\frac{9\cdot1}{45}$$
+        $$=\frac{1}{45}\left(9+16+21+24+25+24+21+16+9\right)=\frac{165}{45}=\frac{11}{3}.$$
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        The cubes with $0$ red faces have no exposed faces initially. These can all be found in the $3\times3\times3$ cube inside of the initial $5\times5\times5$ cube, so there are $27$ of these.\\
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        The cubes with $0$ red faces have no exposed faces initially. These can all be found in the $3\times3\times3$ cube inside of the initial $5\times5\times5$ cube, so there are $27$ of these.\\
+        The cubes with $1$ red face lie on a face of the $5\times5\times5$ cube, but not an edge. On each $5\times 5$ face, these must lie in the inner $3\times 3$ square, so there are $9$ per face. Since there are $6$ faces, there are $54$ in total.\\
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        The cubes with $0$ red faces have no exposed faces initially. These can all be found in the $3\times3\times3$ cube inside of the initial $5\times5\times5$ cube, so there are $27$ of these.\\
+        The cubes with $1$ red face lie on a face of the $5\times5\times5$ cube, but not an edge. On each $5\times 5$ face, these must lie in the inner $3\times 3$ square, so there are $9$ per face. Since there are $6$ faces, there are $54$ in total.\\
+        The cubes with $2$ red faces lie on an edge, but not at a vertex. Since each edge has $5$ unit cubes, of which two are vertices, there are $3$ on each edge. A cube has $12$ edges, so there are $36$ in total.\\
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        The cubes with $0$ red faces have no exposed faces initially. These can all be found in the $3\times3\times3$ cube inside of the initial $5\times5\times5$ cube, so there are $27$ of these.\\
+        The cubes with $1$ red face lie on a face of the $5\times5\times5$ cube, but not an edge. On each $5\times 5$ face, these must lie in the inner $3\times 3$ square, so there are $9$ per face. Since there are $6$ faces, there are $54$ in total.\\
+        The cubes with $2$ red faces lie on an edge, but not at a vertex. Since each edge has $5$ unit cubes, of which two are vertices, there are $3$ on each edge. A cube has $12$ edges, so there are $36$ in total.\\
+        The cubes with $3$ red faces lie at the vertices of the $5\times5\times5$ cube. There are $8$ vertices, so there are $8$ such unit cubes. \\
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item The maximum number of red faces a unit cube can have is $3$, and the minimum is $0$. First, we find the number of unit cubes which have $0,1,2\text{ and } 3$ red faces.\\
+        \bigskip
+        The cubes with $0$ red faces have no exposed faces initially. These can all be found in the $3\times3\times3$ cube inside of the initial $5\times5\times5$ cube, so there are $27$ of these.\\
+        The cubes with $1$ red face lie on a face of the $5\times5\times5$ cube, but not an edge. On each $5\times 5$ face, these must lie in the inner $3\times 3$ square, so there are $9$ per face. Since there are $6$ faces, there are $54$ in total.\\
+        The cubes with $2$ red faces lie on an edge, but not at a vertex. Since each edge has $5$ unit cubes, of which two are vertices, there are $3$ on each edge. A cube has $12$ edges, so there are $36$ in total.\\
+        The cubes with $3$ red faces lie at the vertices of the $5\times5\times5$ cube. There are $8$ vertices, so there are $8$ such unit cubes. \\
+        \bigskip
+        With these values, we can find the probability of each case, and thus the expected value. The answer is
+        $$0\cdot\frac{27}{125}+1\cdot\frac{54}{125}+2\cdot\frac{36}{125}+3\cdot\frac{8}{125}=\frac{54+72+24}{125}=\frac{150}{125}=\frac{6}{5}.$$
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{2}
+        \item Let $x$ be the expected number of times that she will need to pair the gloves until they match. First, we will find the probability that she gets the gloves to match on her first try. If we let the colors of the gloves be red, orange, yellow, green, and blue, this is the same as the probability that two random permutations of ROYGB match. This probability is $\frac{1}{5!}$, because no matter what the first permutation is, there are $5!$ possibilities for the second permutation, of which one will match the first one. This also means that there is a probability of $1-\frac{1}{5!}$ that her first pairing of the gloves doesn't result in a perfect match. At this point, she is back to square one, because each time, her next pairing is completely independent of the previous pairings. The only difference is, she has already tried one pairing. 
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+\begin{frame}[t]{Expected Value Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{2}
+        \item Let $x$ be the expected number of times that she will need to pair the gloves until they match. First, we will find the probability that she gets the gloves to match on her first try. If we let the colors of the gloves be red, orange, yellow, green, and blue, this is the same as the probability that two random permutations of ROYGB match. This probability is $\frac{1}{5!}$, because no matter what the first permutation is, there are $5!$ possibilities for the second permutation, of which one will match the first one. This also means that there is a probability of $1-\frac{1}{5!}$ that her first pairing of the gloves doesn't result in a perfect match. At this point, she is back to square one, because each time, her next pairing is completely independent of the previous pairings. The only difference is, she has already tried one pairing. From here, we can get an equation for $x$:
+        $$x=\left(\frac{1}{5!}\right)(1)+\left(1-\frac{1}{5!}\right)(x+1)$$
+        $$x=\frac{1}{120}+\frac{119}{120}(x+1)$$
+        $$x=\frac{1}{120}+\frac{119x}{120}+\frac{119}{120}$$
+        $$\frac{x}{120}=1\implies x=120.$$
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}[t]{More Practice Problems}
+    \begin{enumerate}
+        \item Al and Bo are planning to both go to a restaurant between 7:00 p.m. and 8:00 p.m., and both arrive at a random time within that hour. Find the probability that they meet each other if
+        \begin{itemize}
+            \item both Al and Bo will wait $20$ minutes before leaving the restaurant
+            \item Al will wait $30$ minutes before leaving, but Bo will leave immediately after arriving if Al isn't there.
+        \end{itemize}
+        \item How many five-digit numbers are there with a digit-sum of $37$? How about $35$? (Keep in mind that the first digit must be nonzero.)
+        \item If there are $n$ rocks, of which exactly $m$ are blue and the rest are gray, how many ways are there to place the $n$ rocks in a line such that no blue rocks are next to each other? (All gray rocks are indistinguishable and all blue rocks are indistinguishable).
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item Instead of the hour, we can just focus on the number of minutes $a$ that Al arrives after 7:00 and the number of minutes $b$ that Bo arrives after 7:00. This means that $0\le a,b\le 60$. Because there are an infinite number of times the two could arrive at, we need to use geometric probability in the form of a graph to model this.\\
+        \bigskip
+        
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item Instead of the hour, we can just focus on the number of minutes $a$ that Al arrives after 7:00 and the number of minutes $b$ that Bo arrives after 7:00. This means that $0\le a,b\le 60$. Because there are an infinite number of times the two could arrive at, we need to use geometric probability in the form of a graph to model this.\\
+        \bigskip
+        In the first case, in order for Al and Bo to meet, we must have $a\le b+20$ and $b\le a+20$. These two equations form a region, which can be graphed like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                size(90);
+                defaultpen(fontsize(6pt));
+                draw((-0.1,0)--(7,0),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,-0.1)--(0,7),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,0)--(0,6)--(6,6)--(6,0)--cycle);
+                filldraw((0,0)--(0,2)--(4,6)--(6,6)--(6,4)--(2,0)--cycle, grey);
+                
+                dot("$(60,60)$",(6,6),dir(-15));
+                label("$a\le b+20$",(2,0),dir(-90));
+                label("$b\le a+20$",(4,6),dir(90));
+
+                
+
+            \end{asy}
+        \end{center}
+        
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item Instead of the hour, we can just focus on the number of minutes $a$ that Al arrives after 7:00 and the number of minutes $b$ that Bo arrives after 7:00. This means that $0\le a,b\le 60$. Because there are an infinite number of times the two could arrive at, we need to use geometric probability in the form of a graph to model this.\\
+        \bigskip
+        In the first case, in order for Al and Bo to meet, we must have $a\le b+20$ and $b\le a+20$. These two equations form a region, which can be graphed like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                size(90);
+                defaultpen(fontsize(6pt));
+                draw((-0.1,0)--(7,0),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,-0.1)--(0,7),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,0)--(0,6)--(6,6)--(6,0)--cycle);
+                filldraw((0,0)--(0,2)--(4,6)--(6,6)--(6,4)--(2,0)--cycle, grey);
+                
+                dot("$(60,60)$",(6,6),dir(-15));
+                label("$a\le b+20$",(2,0),dir(-90));
+                label("$b\le a+20$",(4,6),dir(90));
+
+                
+
+            \end{asy}
+        \end{center}
+        The area of the entire square (all possibilities for $a$ and $b$) is $60^2$. The area of the gray region can be found by subtracting the two white triangles, meaning the gray region has area $60^2-2\left(\frac{40\cdot40}{2}\right)=60^2-40^2$. The answer is therefore
+        $$\frac{60^2-40^2}{60^2}=\frac{3600-1600}{3600}=\frac{2000}{3600}=\frac{5}{9}.$$
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item In the second case, in order for Al and Bo to meet, we must have $b\le a+30$ and $a\le b$. 
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item In the second case, in order for Al and Bo to meet, we must have $b\le a+30$ and $a\le b$. These two equations form a region, which can be graphed like so:
+        
+        \begin{center}
+            \begin{asy}
+                import graph;
+                size(90);
+                defaultpen(fontsize(6pt));
+                draw((-0.1,0)--(7,0),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,-0.1)--(0,7),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,0)--(0,6)--(6,6)--(6,0)--cycle);
+                filldraw((0,0)--(0,3)--(3,6)--(6,6)--cycle, grey);
+                
+                dot("$(60,60)$",(6,6),dir(-15));
+                label("$a\le b$",(0,0),dir(-90));
+                label("$b\le a+30$",(3,6),dir(90));
+
+                
+
+            \end{asy}
+        \end{center}
+        
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+        \item In the second case, in order for Al and Bo to meet, we must have $b\le a+30$ and $a\le b$. These two equations form a region, which can be graphed like so:
+        
+        \begin{center}
+            \begin{asy}
+                import graph;
+                size(90);
+                defaultpen(fontsize(6pt));
+                draw((-0.1,0)--(7,0),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,-0.1)--(0,7),linewidth(1),arrow=Arrow(TeXHead));
+                draw((0,0)--(0,6)--(6,6)--(6,0)--cycle);
+                filldraw((0,0)--(0,3)--(3,6)--(6,6)--cycle, grey);
+                
+                dot("$(60,60)$",(6,6),dir(-15));
+                label("$a\le b$",(0,0),dir(-90));
+                label("$b\le a+30$",(3,6),dir(90));
+
+                
+
+            \end{asy}
+        \end{center}
+        The area of the entire square (all possibilities for $a$ and $b$) is $60^2$. The area of the gray region can be found by subtracting the two white triangles, meaning the gray region has area $60^2-\frac{30\cdot30}{2}-\frac{60\cdot60}{2}=3600-450-1800=1350$. The answer is therefore
+        $$\frac{1350}{3600}=\frac{3}{8}.$$
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=37$. At first, we will ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=37 &\implies 0=37-a-b-c-d-e\\
+            &\implies 8=45-a-b-c-d-e\\
+            &\implies 8=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=37$. At first, we will ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=37 &\implies 0=37-a-b-c-d-e\\
+            &\implies 8=45-a-b-c-d-e\\
+            &\implies 8=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+        Let $a'=9-a,b'=9-b$, and so on until $e'=9-e$. Because each digit must be between $0$ and $9$, $a',b',c',d',e'$ are nonnegative integers which are also between $0$ and $9$. Furthermore, they add up to $8$. By Stars and Bars, the number of solutions to this is $\binom{12}{4}=495$.\\
+        \bigskip
+
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=37$. At first, we will ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=37 &\implies 0=37-a-b-c-d-e\\
+            &\implies 8=45-a-b-c-d-e\\
+            &\implies 8=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+        Let $a'=9-a,b'=9-b$, and so on until $e'=9-e$. Because each digit must be between $0$ and $9$, $a',b',c',d',e'$ are nonnegative integers which are also between $0$ and $9$. Furthermore, they add up to $8$. By Stars and Bars, the number of solutions to this is $\binom{12}{4}=495$.\\
+        \bigskip
+        Now, we must subtract the cases where $a=0$ because these would result in a five-digit integer where the leading digit is zero. If $a=0$, then $b+c+d+e=37$. However, because none of the digits can exceed $9$, $b+c+d+e\le 9\cdot4=36$. Therefore, there are actually no solutions where $a=0$, and our original answer of $495$ is correct.
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Now, consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=35$. Like last time, we will first ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=35 &\implies 0=35-a-b-c-d-e\\
+            &\implies 10=45-a-b-c-d-e\\
+            &\implies 10=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+
+    \end{enumerate}
+    
+\end{frame}
+
+        
+        
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Now, consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=35$. Like last time, we will first ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=35 &\implies 0=35-a-b-c-d-e\\
+            &\implies 10=45-a-b-c-d-e\\
+            &\implies 10=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+        Let $a'=9-a,b'=9-b$, and so on until $e'=9-e$. Because each digit must be between $0$ and $9$, $a',b',c',d',e'$ are nonnegative integers which are also between $0$ and $9$. Furthermore, they add up to $10$. By Stars and Bars, the number of solutions to this is $\binom{14}{4}=1001$, but \ldots
+        
+    \end{enumerate}
+    
+\end{frame}
+
+        
+        
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Now, consider a five-digit number $\overline{abcde}$ with digit sum $a+b+c+d+e=35$. Like last time, we will first ignore the fact that $a\neq 0$. Notice that
+        \begin{align*}
+            a+b+c+d+e=35 &\implies 0=35-a-b-c-d-e\\
+            &\implies 10=45-a-b-c-d-e\\
+            &\implies 10=(9-a)+(9-b)+(9-c)+(9-d)+(9-e).
+        \end{align*}
+        Let $a'=9-a,b'=9-b$, and so on until $e'=9-e$. Because each digit must be between $0$ and $9$, $a',b',c',d',e'$ are nonnegative integers which are also between $0$ and $9$. Furthermore, they add up to $10$. By Stars and Bars, the number of solutions to this is $\binom{14}{4}=1001$, but this ignores the fact that none of $a',b',c',d',e'$ can be greater than $9$. (If any of $a',b',c',d',e'$ were greater than $9$, it would mean that one of $a,b,c,d,e$ was less than zero, which is impossible.) This means we counted solutions $(0,0,0,0,10)$, $(0,0,0,10,0)$, and so on. There are five of these, so the actual number of solutions is $1001-5=996$.\\
+        \bigskip
+        
+    \end{enumerate}
+    
+\end{frame}
+
+        
+        
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}        
+        
+        
+        \item Now, we must subtract the cases where $a=0$ because these would result in a five-digit integer where the leading digit is zero. If $a=0$, then 
+        \begin{align*}
+            b+c+d+e=35 &\implies 0=35-b-c-d-e\\
+            &\implies 1=(9-b)+(9-c)+(9-d)+(9-e)\\
+            &\implies 1=b'+c'+d'+e'.
+        \end{align*}
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+        
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}        
+        
+        
+        \item Now, we must subtract the cases where $a=0$ because these would result in a five-digit integer where the leading digit is zero. If $a=0$, then 
+        \begin{align*}
+            b+c+d+e=35 &\implies 0=35-b-c-d-e\\
+            &\implies 1=(9-b)+(9-c)+(9-d)+(9-e)\\
+            &\implies 1=b'+c'+d'+e'.
+        \end{align*}
+        Since $b',c',d',e'$ are all nonnegative integers, by Stars and Bars, there are $\binom{4}{3}=4$ solutions to this. This means there are $4$ possibilities where $a=0$ and the number still has a digit sum of $35$.\\
+        \bigskip
+        Subtracting these $4$ cases from our total count gives an answer of $996-4=992$.
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+        
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{2}        
+        
+        
+        \item If $m$ of the rocks are blue, then the remaining $n-m$ are gray. Imagine placing the $n-m$ gray rocks in a line, like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                unitsize(9);
+                for(int i=1; i<8; ++i){
+                    filldraw(circle((2*i, 0),0.2), gray, gray);
+                }
+                filldraw(circle((-2.3*2, 0),0.2), gray, gray);
+                filldraw(circle((10.3*2, 0),0.2), gray, gray);
+                
+                label("\ldots",(-0.5*2,0));
+                label("\ldots",(8.7*2,0));
+                
+                
+                
+            \end{asy}
+        \end{center}
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{2}        
+        
+        
+        \item If $m$ of the rocks are blue, then the remaining $n-m$ are gray. Imagine placing the $n-m$ gray rocks in a line, like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                unitsize(9);
+                for(int i=1; i<8; ++i){
+                    filldraw(circle((2*i, 0),0.2), gray, gray);
+                }
+                filldraw(circle((-2.3*2, 0),0.2), gray, gray);
+                filldraw(circle((10.3*2, 0),0.2), gray, gray);
+                
+                label("\ldots",(-0.5*2,0));
+                label("\ldots",(8.7*2,0));
+                
+                
+                
+            \end{asy}
+        \end{center}
+        Then, because none of the blue rocks can be adjacent, we can mark all the gaps between the gray rocks as possible locations for the blue rocks, like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                unitsize(9);
+                for(int i=1; i<8; ++i){
+                    filldraw(circle((2*i, 0),0.2), gray, gray);
+                }
+                for (int i=0; i<8; ++i){
+                    draw((2*i+1-0.2, -0.2)--(2*i+1+0.2, +0.2), blue);
+                    draw((2*i+1-0.2, 0.2)--(2*i+1+0.2, -0.2), blue);
+                }
+                filldraw(circle((-2.3*2, 0),0.2), gray, gray);
+                filldraw(circle((10.3*2, 0),0.2), gray, gray);
+                draw((-2*3.3+1-0.2, 0.2)--(-2*3.3+1+0.2, -0.2), blue);   
+                draw((-2*3.3+1-0.2, -0.2)--(-2*3.3+1+0.2, 0.2), blue);
+                draw((-2*2.3+1-0.2, 0.2)--(-2*2.3+1+0.2, -0.2), blue);   
+                draw((-2*2.3+1-0.2, -0.2)--(-2*2.3+1+0.2, 0.2), blue);
+                draw((2*9.3+1-0.2, 0.2)--(2*9.3+1+0.2,-0.2), blue);
+                draw((2*9.3+1-0.2, -0.2)--(2*9.3+1+0.2,0.2), blue);
+                draw((2*10.3+1-0.2, 0.2)--(2*10.3+1+0.2,-0.2), blue);
+                draw((2*10.3+1-0.2, -0.2)--(2*10.3+1+0.2,0.2), blue);
+
+
+                
+                
+                label("\ldots",(-0.5*2,0));
+                label("\ldots",(8.7*2,0));
+                
+                
+                
+            \end{asy}
+        \end{center}
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+\begin{frame}[fragile, t]{More Practice Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{2}        
+        
+        
+        \item If $m$ of the rocks are blue, then the remaining $n-m$ are gray. Imagine placing the $n-m$ gray rocks in a line, like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                unitsize(9);
+                for(int i=1; i<8; ++i){
+                    filldraw(circle((2*i, 0),0.2), gray, gray);
+                }
+                filldraw(circle((-2.3*2, 0),0.2), gray, gray);
+                filldraw(circle((10.3*2, 0),0.2), gray, gray);
+                
+                label("\ldots",(-0.5*2,0));
+                label("\ldots",(8.7*2,0));
+                
+                
+                
+            \end{asy}
+        \end{center}
+        Then, because none of the blue rocks can be adjacent, we can mark all the gaps between the gray rocks as possible locations for the blue rocks, like so:
+        \begin{center}
+            \begin{asy}
+                import graph;
+                unitsize(9);
+                for(int i=1; i<8; ++i){
+                    filldraw(circle((2*i, 0),0.2), gray, gray);
+                }
+                for (int i=0; i<8; ++i){
+                    draw((2*i+1-0.2, -0.2)--(2*i+1+0.2, +0.2), blue);
+                    draw((2*i+1-0.2, 0.2)--(2*i+1+0.2, -0.2), blue);
+                }
+                filldraw(circle((-2.3*2, 0),0.2), gray, gray);
+                filldraw(circle((10.3*2, 0),0.2), gray, gray);
+                draw((-2*3.3+1-0.2, 0.2)--(-2*3.3+1+0.2, -0.2), blue);   
+                draw((-2*3.3+1-0.2, -0.2)--(-2*3.3+1+0.2, 0.2), blue);
+                draw((-2*2.3+1-0.2, 0.2)--(-2*2.3+1+0.2, -0.2), blue);   
+                draw((-2*2.3+1-0.2, -0.2)--(-2*2.3+1+0.2, 0.2), blue);
+                draw((2*9.3+1-0.2, 0.2)--(2*9.3+1+0.2,-0.2), blue);
+                draw((2*9.3+1-0.2, -0.2)--(2*9.3+1+0.2,0.2), blue);
+                draw((2*10.3+1-0.2, 0.2)--(2*10.3+1+0.2,-0.2), blue);
+                draw((2*10.3+1-0.2, -0.2)--(2*10.3+1+0.2,0.2), blue);
+
+
+                
+                
+                label("\ldots",(-0.5*2,0));
+                label("\ldots",(8.7*2,0));
+                
+                
+                
+            \end{asy}
+        \end{center}
+        This means there are $n-m+1$ possible places for the blue rocks, so since we must place $m$ in these places, the number of possible ways to arrange the rocks is $\binom{n-m+1}{m}$.\\
+        \bigskip
+        This means that if $m>n-m+1$, which translates to $2m-1>n$, then there are no possible arrangements of the rocks.
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[t]{Challenge Problems}
+    \begin{enumerate}
+        \item If three real numbers are uniformly and randomly chosen from between $0$ and $3$, what is the probability that their sum is less than $3$?
+        \item Al and Bo are playing a game. Each of them has an unfair coin; Al's coin has a $2/3$ chance of coming up heads and Bo's coin has a $2/5$ chance of coming up heads. The game is as follows: Al and Bo alternate flipping their coin until both coins match, with Al going first. The winning is whoever flipped their coin most recently. For example, a game could go as follows: Al starts by flipping a tails, then Bo flips a heads, then Al flips tails again, and Bo flips a tails, winning the game. What is the probability of Al winning?
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile, t]{Challenge Solutions}
+    \begin{enumerate}
+        \item Let the three numbers be $x+y+z$, where $0\le x,y,z\le 3$. We want to find the probability that $x+y+z\le 3$. There are infinitely many possibilities for each of $x,y,\text{ and }z$, so to find this probability, we can use geometric probability. Just like how we need two dimensions to describe two unknowns, we need three to describe three unknowns.\\
+        \bigskip
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+       
+
+\begin{frame}[fragile, t]{Challenge Solutions}
+    \begin{enumerate}
+        \item Let the three numbers be $x+y+z$, where $0\le x,y,z\le 3$. We want to find the probability that $x+y+z\le 3$. There are infinitely many possibilities for each of $x,y,\text{ and }z$, so to find this probability, we can use geometric probability. Just like how we need two dimensions to describe two unknowns, we need three to describe three unknowns.\\
+        \bigskip
+        The total region we are concerned with is the set of points where $0\le x\le 3$, $0\le y\le3$, and $0\le z\le 3$. This forms a $3\times3\times3$ cube. The equation $x+y+z=3$ forms a plane in 3D space, which slices through this cube and forms a pyramid. Here are three ways of viewing this:
+        
+        \begin{columns}
+            \begin{column}{0.32\textwidth}
+               \begin{center}
+                    \begin{asy}
+                        settings.render=0;
+                        import three;
+                        import graph;
+                        size(100);
+                        defaultpen(fontsize(7pt));
+                        currentprojection = perspective(2*(8,9,10));
+                        draw(O -- 4.5X, Arrow3);
+                        label("$x$",4.7X-0.2Z);
+                        draw(O -- 4.5Y, Arrow3, L=Label("$y$",
+                        position=EndPoint));
+                        draw(O -- 4.5Z, Arrow3, L=Label("$z$",
+                        position=EndPoint));
+                        draw(3X--3Y--3Z--cycle);
+                        draw(O--3X--3X+3Y--3Y--O--3Z);
+                        draw(3Z--3Z+3X--3Z+3X+3Y--3Z+3Y--3Z);
+                        draw(3X+3Z--3X^^3Z+3X+3Y--3X+3Y^^3Z+3Y--3Y);
+                        draw(scale3(3)*unitcube,palegray+opacity(0.2));
+                        path3 a = O--3X--3Z--cycle;
+                        path3 b = O--3X--3Y--cycle;
+                        path3 c = O--3Y--3Z--cycle;
+                        path3 d = 3X--3Y--3Z--cycle;
+                        draw(surface(a),blue);
+                        draw(surface(b),blue);
+                        draw(surface(c),blue);
+                    \end{asy}
+               \end{center}
+            \end{column}
+            \begin{column}{0.32\textwidth}  %%<--- here
+                \begin{center}
+                    \begin{asy}
+                        settings.render=0;
+                        import three;
+                        import graph;
+                        size(100);
+                        defaultpen(fontsize(7pt));
+                        currentprojection = perspective(2*(10, 5, 4));
+                        draw(O -- 4.5X, Arrow3);
+                        label("$x$",4.7X-0.2Z);
+                        draw(O -- 4.5Y, Arrow3, L=Label("$y$",
+                        position=EndPoint));
+                        draw(O -- 4.5Z, Arrow3, L=Label("$z$",
+                        position=EndPoint));
+                        draw(3X--3Y--3Z--cycle);
+                        draw(O--3X--3X+3Y--3Y--O--3Z);
+                        draw(3Z--3Z+3X--3Z+3X+3Y--3Z+3Y--3Z);
+                        draw(3X+3Z--3X^^3Z+3X+3Y--3X+3Y^^3Z+3Y--3Y);
+                        draw(scale3(3)*unitcube,palegray+opacity(0.2));
+                        path3 a = O--3X--3Z--cycle;
+                        path3 b = O--3X--3Y--cycle;
+                        path3 c = O--3Y--3Z--cycle;
+                        path3 d = 3X--3Y--3Z--cycle;
+                        draw(surface(a),blue);
+                        draw(surface(b),blue+opacity(0.9));
+                        draw(surface(c),blue+opacity(0.98));
+                        
+                    \end{asy}            
+                \end{center}
+            \end{column}
+            \begin{column}{0.32\textwidth}
+                \bigskip
+               \begin{center}
+                    \begin{asy}
+                        settings.render=0;
+                        import three;
+                        import graph;
+                        size(90);
+                        defaultpen(fontsize(5pt));
+                        currentprojection = perspective(2*(11,6,6));
+                        path3 a = O--3X--3Y--cycle;
+                        path3 b = O--3Y--3Z--cycle;
+                        path3 c = O--3Z--3X--cycle;
+                        path3 d = 3X--3Y--3Z--cycle;
+                        
+                        draw(a^^b^^c^^d);
+                        label("$(0,0,3)$",3.4Z);
+                        label("$(0,3,0)$",4.2Y);
+                        label("$(3,0,0)$",3.6X);
+                        label("$(0,0,0)$",0.24Y+0.3Z);
+
+                    \end{asy}
+               \end{center}
+            \end{column}
+        \end{columns}
+        
+
+
+    \end{enumerate}
+    
+\end{frame}
+
+
+        
+        
+\begin{frame}[fragile, t]{Challenge Solutions}
+    \begin{enumerate}
+        \item To find the probability that $x+y+z\le 3$, we want to find the ratio of the volume of this pyramid to the volume of the whole cube. The general volume of a pyramid is $\frac{1}{3}\times\text{base $\times$ height}$. In this case, if we choose the triangle formed by $(0,0,0)$, $(3,0,0)$, and $(0,3,0)$ to be the base, the base is an isosceles right triangle with legs that are $3$ units long. The apex points $(0,0,3)$ is $3$ units above the base, so the height is $3$. Thus,
+        \begin{align*}
+            \text{Volume of Pyramid} &= \frac{1}{3}\times\text{base $\times$ height}\\
+            &=\frac{1}{3}\times \left(\frac{1}{2}\cdot3\cdot3\right)\times 3\\
+            &=\frac{27}{6}=\frac{9}{2}.
+        \end{align*}\\
+        \bigskip
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+        
+\begin{frame}[fragile, t]{Challenge Solutions}
+    \begin{enumerate}
+        \item To find the probability that $x+y+z\le 3$, we want to find the ratio of the volume of this pyramid to the volume of the whole cube. The general volume of a pyramid is $\frac{1}{3}\times\text{base $\times$ height}$. In this case, if we choose the triangle formed by $(0,0,0)$, $(3,0,0)$, and $(0,3,0)$ to be the base, the base is an isosceles right triangle with legs that are $3$ units long. The apex points $(0,0,3)$ is $3$ units above the base, so the height is $3$. Thus,
+        \begin{align*}
+            \text{Volume of Pyramid} &= \frac{1}{3}\times\text{base $\times$ height}\\
+            &=\frac{1}{3}\times \left(\frac{1}{2}\cdot3\cdot3\right)\times 3\\
+            &=\frac{27}{6}=\frac{9}{2}.
+        \end{align*}\\
+        \bigskip
+        The entire cube of points where $0\le x,y,z\le 3$ is a cube with edge length $3$, so its volume is $27$. Finally, the probability that $x+y+z\le 3$ is $\frac{9/2}{27}=\frac{1}{6}$.
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item In order for Al to win, Al and Bo's flips must be an alternating sequence of heads and tails (or tails and heads) until Al finally matches Bo's last flip. Let a string of H's and T's represent their flips; for instance, HTHTHTHTHH would represent Al flipping heads, then Bo flipping tails, and so on until Bo wins by flipping heads. We will use casework on Al's first flip.\\
+        \bigskip
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item In order for Al to win, Al and Bo's flips must be an alternating sequence of heads and tails (or tails and heads) until Al finally matches Bo's last flip. Let a string of H's and T's represent their flips; for instance, HTHTHTHTHH would represent Al flipping heads, then Bo flipping tails, and so on until Bo wins by flipping heads. We will use casework on Al's first flip.\\
+        \bigskip
+        If Al's first flip is heads, then Bo's first flip must be tails, and Al and Bo must keep alternating heads and tails until Al flips a tail to win. This can be represented by the strings HTT, HTHTT, HTHTHTT, \ldots. More generally, the string of flips if Al starts with heads and wins is some number of HT's and a T at the end. The probability of HT (Al flipping H and Bo flipping T) is $\frac{2}{3}\cdot\frac{3}{5}=\frac{2}{5}$, and the probability of Al flipping the final T is $\frac{1}{3}$. 
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item In order for Al to win, Al and Bo's flips must be an alternating sequence of heads and tails (or tails and heads) until Al finally matches Bo's last flip. Let a string of H's and T's represent their flips; for instance, HTHTHTHTHH would represent Al flipping heads, then Bo flipping tails, and so on until Bo wins by flipping heads. We will use casework on Al's first flip.\\
+        \bigskip
+        If Al's first flip is heads, then Bo's first flip must be tails, and Al and Bo must keep alternating heads and tails until Al flips a tail to win. This can be represented by the strings HTT, HTHTT, HTHTHTT, \ldots. More generally, the string of flips if Al starts with heads and wins is some number of HT's and a T at the end. The probability of HT (Al flipping H and Bo flipping T) is $\frac{2}{3}\cdot\frac{3}{5}=\frac{2}{5}$, and the probability of Al flipping the final T is $\frac{1}{3}$. Thus, the probability of this case is the sum of the probabilities for each possible string, which is $$\left(\frac{2}{5}\right)\left(\frac{1}{3}\right)+\left(\frac{2}{5}\right)^2\left(\frac{1}{3}\right)+\left(\frac{2}{5}\right)^3\left(\frac{1}{3}\right)+\cdots$$
+        $$=\frac{1}{3}\bigg(\left(\frac{2}{5}\right)+\left(\frac{2}{5}\right)^2+\cdots\bigg)$$
+        $$=\frac{1}{3}\left(\frac{2/5}{1-2/5}\right)=\frac{2}{9}.$$
+        
+        
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Similarly, if Al's first flip is a tails, then the string of flips is one of THH, THTHH, THTHTHH, \ldots. More generally, the string of flips if Al starts with tails and wins is some number of TH's and a H at the end. The probability of TH (Al flipping T and Bo flipping H) is $\frac{1}{3}\cdot\frac{2}{5}=\frac{2}{15}$, and the probability of Al flipping the final H is $\frac{2}{3}$. 
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Similarly, if Al's first flip is a tails, then the string of flips is one of THH, THTHH, THTHTHH, \ldots. More generally, the string of flips if Al starts with tails and wins is some number of TH's and a H at the end. The probability of TH (Al flipping T and Bo flipping H) is $\frac{1}{3}\cdot\frac{2}{5}=\frac{2}{15}$, and the probability of Al flipping the final H is $\frac{2}{3}$. Then, adding up the probabilities like last case gives us
+        $$\left(\frac{2}{15}\right)\left(\frac{2}{3}\right)+\left(\frac{2}{15}\right)^2\left(\frac{2}{3}\right)+\left(\frac{2}{15}\right)^3\left(\frac{2}{3}\right)+\cdots$$
+        $$=\frac{2}{3}\bigg(\left(\frac{2}{15}\right)+\left(\frac{2}{15}\right)^2+\cdots\bigg)$$
+        $$=\frac{2}{3}\left(\frac{2/15}{1-2/15}\right)=\frac{4}{39}.$$\\
+        \bigskip
+        
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+\begin{frame}[t]{Challenge Solutions}
+    \begin{enumerate}
+    \setcounter{enumi}{1}
+        \item Similarly, if Al's first flip is a tails, then the string of flips is one of THH, THTHH, THTHTHH, \ldots. More generally, the string of flips if Al starts with tails and wins is some number of TH's and a H at the end. The probability of TH (Al flipping T and Bo flipping H) is $\frac{1}{3}\cdot\frac{2}{5}=\frac{2}{15}$, and the probability of Al flipping the final H is $\frac{2}{3}$. Then, adding up the probabilities like last case gives us
+        $$\left(\frac{2}{15}\right)\left(\frac{2}{3}\right)+\left(\frac{2}{15}\right)^2\left(\frac{2}{3}\right)+\left(\frac{2}{15}\right)^3\left(\frac{2}{3}\right)+\cdots$$
+        $$=\frac{2}{3}\bigg(\left(\frac{2}{15}\right)+\left(\frac{2}{15}\right)^2+\cdots\bigg)$$
+        $$=\frac{2}{3}\left(\frac{2/15}{1-2/15}\right)=\frac{4}{39}.$$\\
+        \bigskip
+        Adding up the two cases, we deduce that Al's chance of winning is $$\frac{2}{9}+\frac{4}{39}=\frac{38}{117}.$$
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%         ALL FROM OCTOBER CLASS
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}[t]{Basics of Counting}
+% \begin{itemize}
+%     \item Use different strategies to find the number of ways something can happen
+%     \item Some strategies include casework, complimentary counting, Venn Diagrams, and using logic
+% \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Factorials, Permutations, and Combinations}
+%     \begin{itemize}
+        
+%     \end{itemize}
+% \end{frame}
+% \begin{frame}[t]{Factorials, Permutations, and Combinations}
+%     \begin{itemize}
+%         \item $n$-factorial ($n!$) is equal to $n\cdot(n-1)\cdot(n-2)\cdots 2\cdot 1$. This is the number of ways to arrange $n$ distinguishable things
+%         \begin{itemize}
+%             \item Ex) The number of ways to distribute 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango among 5 different people is $5!=120$.
+%         \end{itemize}
+        
+%     \end{itemize}
+% \end{frame}
+% \begin{frame}[t]{Factorials, Permutations, and Combinations}
+%     \begin{itemize}
+%         \item $n$-factorial ($n!$) is equal to $n\cdot(n-1)\cdot(n-2)\cdots 2\cdot 1$. This is the number of ways to arrange $n$ distinguishable things
+%         \begin{itemize}
+%             \item Ex) The number of ways to distribute 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango among 5 different people is $5!=120$.
+%         \end{itemize}
+%         \item $\Perm{n}{k}=\frac{n!}{(n-k)!}$ represents the number of ways to form a permutation (order does matter) of $k$ unique elements out of a set of $n$ total elements.
+%         \begin{itemize}
+%             \item Ex) The number of ways to give 3 people each one fruit from a basket with 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango is $\Perm{5}{3}=\frac{5!}{2!}=\frac{120}{2}=60$.
+%         \end{itemize}
+        
+%     \end{itemize}
+% \end{frame}
+% \begin{frame}[t]{Factorials, Permutations, and Combinations}
+%     \begin{itemize}
+%         \item $n$-factorial ($n!$) is equal to $n\cdot(n-1)\cdot(n-2)\cdots 2\cdot 1$. This is the number of ways to arrange $n$ distinguishable things
+%         \begin{itemize}
+%             \item Ex) The number of ways to distribute 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango among 5 different people is $5!=120$.
+%         \end{itemize}
+%         \item $\Perm{n}{k}=\frac{n!}{(n-k)!}$ represents the number of ways to form a permutation (order does matter) of $k$ unique elements out of a set of $n$ total elements.
+%         \begin{itemize}
+%             \item Ex) The number of ways to give 3 people each one fruit from a basket with 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango is $\Perm{5}{3}=\frac{5!}{2!}=\frac{120}{2}=60$.
+%         \end{itemize}
+%         \item $\Comb{n}{k}=\binom{n}{k}=\frac{n!}{k!(n-k)!}$ represents the number of ways to form a combination (order doesn't matter) of $k$ unique elements out of a set of $n$ total elements.
+%         \begin{itemize}
+%             \item a.k.a. "$n$ choose $k$" because you choose $k$ elements out of $n$ total
+%             \item Ex) The number of ways to choose three fruits from a basket with 1 apple, 1 banana, 1 orange, 1 peach, and 1 mango is $\binom{5}{3}=\frac{5!}{3!2!}=\frac{120}{6\cdot2}=10$.
+%         \end{itemize}
+%     \end{itemize}
+% \end{frame}
+
+
+% \begin{frame}[t]{Counting by Casework}
+
+% \end{frame}
+% \begin{frame}[t]{Counting by Casework}
+% Casework can be used when a certain outcome can be split into smaller, more specific outcomes. We can find the number of ways to get the main outcome by adding up the number of ways to get each of the smaller outcomes.
+
+
+% \end{frame}
+% \begin{frame}[t]{Counting by Casework}
+% Casework can be used when a certain outcome can be split into smaller, more specific outcomes. We can find the number of ways to get the main outcome by adding up the number of ways to get each of the smaller outcomes.
+% \begin{block}{Example 1}
+% The doctor gave Amber ten vitamins, with instructions to take one or two each
+% day until she runs out of vitamins. For example, Amber could take a vitamin a
+% day for ten days, or she could take two the first day and one a day for the next
+% eight days. A third way is to take one vitamin a day for eight days
+% and two on the ninth day. Including the three examples given, in
+% how many different ways can Amber take the ten vitamins? 
+% \end{block}
+
+% \end{frame}
+% \begin{frame}[t]{Counting by Casework}
+% Casework can be used when a certain outcome can be split into smaller, more specific outcomes. We can find the number of ways to get the main outcome by adding up the number of ways to get each of the smaller outcomes.
+% \begin{block}{Example 1}
+% The doctor gave Amber ten vitamins, with instructions to take one or two each
+% day until she runs out of vitamins. For example, Amber could take a vitamin a
+% day for ten days, or she could take two the first day and one a day for the next
+% eight days. A third way is to take one vitamin a day for eight days
+% and two on the ninth day. Including the three examples given, in
+% how many different ways can Amber take the ten vitamins? 
+% \end{block}
+% There are many ways to solve it, but we will use casework on the number of days $n$ Amber has to take vitamins. This can be between $5$ and $10$. 
+
+% \end{frame}
+
+
+
+
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+    
+% \end{itemize}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+    
+% \end{itemize}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 3:} $n=7$. This means there were $3$ days when she took $2$ and $4$ days when she took $1$. There is a total of $\binom{7}{3}=35$ (or $\binom{7}{4}$) ways for this to happen, because we need to choose $3$ of the $7$ days for her to take $2$ vitamins.    
+    
+% \end{itemize}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 3:} $n=7$. This means there were $3$ days when she took $2$ and $4$ days when she took $1$. There is a total of $\binom{7}{3}=35$ (or $\binom{7}{4}$) ways for this to happen, because we need to choose $3$ of the $7$ days for her to take $2$ vitamins.    
+%     \item \textbf{Case 4:} $n=8$. This means there were $2$ days when she took $2$ and $6$ days when she took $1$. There is a total of $\binom{8}{2}=28$ (or $\binom{8}{6}$) ways for this to happen, because we need to choose $2$ of the $8$ days for her to take $2$ vitamins.
+    
+% \end{itemize}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 3:} $n=7$. This means there were $3$ days when she took $2$ and $4$ days when she took $1$. There is a total of $\binom{7}{3}=35$ (or $\binom{7}{4}$) ways for this to happen, because we need to choose $3$ of the $7$ days for her to take $2$ vitamins.    
+%     \item \textbf{Case 4:} $n=8$. This means there were $2$ days when she took $2$ and $6$ days when she took $1$. There is a total of $\binom{8}{2}=28$ (or $\binom{8}{6}$) ways for this to happen, because we need to choose $2$ of the $8$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 5:} $n=9$. This means there was $1$ days when she took $2$ and $8$ days when she took $1$. There is a total of $\binom{9}{1}=9$ (or $\binom{9}{8}$) ways for this to happen, because we need to choose $1$ of the $9$ days for her to take $2$ vitamins.
+%     \end{itemize}
+    
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 3:} $n=7$. This means there were $3$ days when she took $2$ and $4$ days when she took $1$. There is a total of $\binom{7}{3}=35$ (or $\binom{7}{4}$) ways for this to happen, because we need to choose $3$ of the $7$ days for her to take $2$ vitamins.    
+%     \item \textbf{Case 4:} $n=8$. This means there were $2$ days when she took $2$ and $6$ days when she took $1$. There is a total of $\binom{8}{2}=28$ (or $\binom{8}{6}$) ways for this to happen, because we need to choose $2$ of the $8$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 5:} $n=9$. This means there was $1$ days when she took $2$ and $8$ days when she took $1$. There is a total of $\binom{9}{1}=9$ (or $\binom{9}{8}$) ways for this to happen, because we need to choose $1$ of the $9$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 6:} $n=10$. This means that she took $1$ each day for $10$ days, so there is only $1$ way for this to happen.
+% \end{itemize}
+
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Counting By Casework }
+% \begin{itemize}
+%     \item \textbf{Case 1:} $n=5$. This means she took $2$ each day for $5$ days, so there is only $1$ way for this to happen.
+%     \item \textbf{Case 2:} $n=6$. This means there were $4$ days when she took $2$ and $2$ days when she took $1$. There is a total of $\binom{6}{4}=15$ (or $\binom{6}{2}$) ways for this to happen, because we need to choose $4$ of the $6$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 3:} $n=7$. This means there were $3$ days when she took $2$ and $4$ days when she took $1$. There is a total of $\binom{7}{3}=35$ (or $\binom{7}{4}$) ways for this to happen, because we need to choose $3$ of the $7$ days for her to take $2$ vitamins.    
+%     \item \textbf{Case 4:} $n=8$. This means there were $2$ days when she took $2$ and $6$ days when she took $1$. There is a total of $\binom{8}{2}=28$ (or $\binom{8}{6}$) ways for this to happen, because we need to choose $2$ of the $8$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 5:} $n=9$. This means there was $1$ days when she took $2$ and $8$ days when she took $1$. There is a total of $\binom{9}{1}=9$ (or $\binom{9}{8}$) ways for this to happen, because we need to choose $1$ of the $9$ days for her to take $2$ vitamins.
+%     \item \textbf{Case 6:} $n=10$. This means that she took $1$ each day for $10$ days, so there is only $1$ way for this to happen.
+% \end{itemize}
+% Adding these all up, the answer is $1+15+35+28+9+1=89$.
+
+% \end{frame}
+
+
+% \begin{frame}[t]{Complimentary Counting}
+
+
+% \end{frame}
+
+
+
+% \begin{frame}[t]{Complimentary Counting}
+% Sometimes it is easier to count all of the wrong outcomes than all of the correct outcomes.
+
+
+
+
+% \end{frame}
+
+
+
+% \begin{frame}[t]{Complimentary Counting}
+% Sometimes it is easier to count all of the wrong outcomes than all of the correct outcomes.
+% \begin{block}{Example 2}
+% How many $6$-digit numbers contain the digit $1$, the digit $2$, and the digit $3$?
+% \end{block}
+
+
+
+% \end{frame}
+
+
+
+% \begin{frame}[t]{Complimentary Counting}
+% Sometimes it is easier to count all of the wrong outcomes than all of the correct outcomes.
+% \begin{block}{Example 2}
+% How many $6$-digit numbers contain the digit $1$, the digit $2$, and the digit $3$?
+% \end{block}
+% If we wanted to directly count all of these numbers, we would have a ton of cases and it would be very ugly. So, instead we count the opposite: \textit{How many $6$-digit numbers don't contain the digit $1$, the digit $2$, or the digit $3$?} 
+
+
+
+% \end{frame}
+
+
+
+% \begin{frame}[t]{Complimentary Counting}
+% Sometimes it is easier to count all of the wrong outcomes than all of the correct outcomes.
+% \begin{block}{Example 2}
+% How many $6$-digit numbers contain the digit $1$, the digit $2$, and the digit $3$?
+% \end{block}
+% If we wanted to directly count all of these numbers, we would have a ton of cases and it would be very ugly. So, instead we count the opposite: \textit{How many $6$-digit numbers don't contain the digit $1$, the digit $2$, or the digit $3$?} 
+
+% The only digits that can be in the number are $4, 5, 6, 7, 8, 9, \text{ and }0$. Also, all of the digits in the number are \textit{independent} because they don't affect each other. The first digit can't be $0$, so it has $6$ possibilities. The next $5$ digits all have $7$ possibilities. Therefore, multiplying these up we get an answer of $6\cdot 7^5$. 
+
+
+% \end{frame}
+
+
+
+% \begin{frame}[t]{Complimentary Counting}
+% Sometimes it is easier to count all of the wrong outcomes than all of the correct outcomes.
+% \begin{block}{Example 2}
+% How many $6$-digit numbers contain the digit $1$, the digit $2$, and the digit $3$?
+% \end{block}
+% If we wanted to directly count all of these numbers, we would have a ton of cases and it would be very ugly. So, instead we count the opposite: \textit{How many $6$-digit numbers don't contain the digit $1$, the digit $2$, or the digit $3$?} 
+
+% The only digits that can be in the number are $4, 5, 6, 7, 8, 9, \text{ and }0$. Also, all of the digits in the number are \textit{independent} because they don't affect each other. The first digit can't be $0$, so it has $6$ possibilities. The next $5$ digits all have $7$ possibilities. Therefore, multiplying these up we get an answer of $6\cdot 7^5$. 
+
+% But we aren't done yet. We still need to solve the original problem. We can do this by subtracting the number of $6$-digit numbers without a $1$, $2$, or $3$ from the total number of $6$-digit numbers. With similar logic, for any $6$-digit number the first digit has $9$ possibilities ($1-9$) and the next $5$ have $10$ possibilities ($0-9$). Thus, there are $9\cdot10^5$ total $6$-digit numbers. Our final answer is $9\cdot10^5-6\cdot7^5$.
+
+% \end{frame}
+
+
+% %---------------------------------------------------------------------------------------
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+       
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+            
+%         \end{itemize}
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%             \end{itemize}
+%         \end{itemize}
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%                 \item Ex) \textit{What is the probability of rolling a die and getting a $2$ or a $4$?} You can't roll both at once, so the answer is $\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$.
+%             \end{itemize}
+%         \end{itemize}
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%                 \item Ex) \textit{What is the probability of rolling a die and getting a $2$ or a $4$?} You can't roll both at once, so the answer is $\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$.
+%             \end{itemize}
+%         \end{itemize}
+%         \item $P(A|B)$ means the probability of event $A$ \textit{given} that event $B$ occurs. Then, $P(A\text{ and }B)=P(A)\cdot P(B|A)=P(B)\cdot P(A|B)$.
+        
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%                 \item Ex) \textit{What is the probability of rolling a die and getting a $2$ or a $4$?} You can't roll both at once, so the answer is $\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$.
+%             \end{itemize}
+%         \end{itemize}
+%         \item $P(A|B)$ means the probability of event $A$ \textit{given} that event $B$ occurs. Then, $P(A\text{ and }B)=P(A)\cdot P(B|A)=P(B)\cdot P(A|B)$.
+%         \begin{itemize}
+%             \item Ex) \textit{If two distinct single-digit positive integers are chosen randomly, what is the probability they are both odd?} Let $A$ be the event that the first number is odd and let $B$ be the event that the second number is odd. $P(A)=\frac{5}{9}$ and $P(B|A)=\frac{4}{8}=\frac{1}{2}$, so the answer is $\frac{5}{9}\cdot\frac{1}{2}=\frac{5}{18}$.
+            
+%         \end{itemize}
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%                 \item Ex) \textit{What is the probability of rolling a die and getting a $2$ or a $4$?} You can't roll both at once, so the answer is $\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$.
+%             \end{itemize}
+%         \end{itemize}
+%         \item $P(A|B)$ means the probability of event $A$ \textit{given} that event $B$ occurs. Then, $P(A\text{ and }B)=P(A)\cdot P(B|A)=P(B)\cdot P(A|B)$.
+%         \begin{itemize}
+%             \item Ex) \textit{If two distinct single-digit positive integers are chosen randomly, what is the probability they are both odd?} Let $A$ be the event that the first number is odd and let $B$ be the event that the second number is odd. $P(A)=\frac{5}{9}$ and $P(B|A)=\frac{4}{8}=\frac{1}{2}$, so the answer is $\frac{5}{9}\cdot\frac{1}{2}=\frac{5}{18}$.
+%             \item Two events $A$ and $B$ are \textbf{independent} if they don't affect each other at all. Then, $P(A\text{ and }B)=P(A)\cdot P(B)$.
+            
+%         \end{itemize}
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Basics of Probability}
+%     \begin{itemize}
+%         \item The probability of an event $A$ (represented by $P(A)$) is equal to $\frac{\text{\# of ways A could happen}}{\text{\# of total outcomes}}$.
+%         \begin{itemize}
+%             \item Ex) The probability of a random letter being a vowel is $\frac{5}{26}$ because there are $5$ ways for a chosen letter to be a vowel and $26$ total letters that could be chosen.
+%         \end{itemize}
+%         \item The probabilities of all possible outcomes add up to $1$.
+%         \item Given two events $A$ and $B$, then $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$. (like a Venn Diagram)
+%         \begin{itemize}
+%             \item Ex) The probability of a random card from a deck being a heart or a king is $\frac{13}{52}+\frac{4}{52}-\frac{1}{52}=\frac{4}{13}$. 
+        
+%             \item Two events $A$ and $B$ are \textbf{mutually exclusive} if $A$ and $B$ can't occur at the same time. Then, $P(A\text{ or }B)=P(A)+P(B)$ because $P(A\text{ and }B)=0$.
+%             \begin{itemize}
+%                 \item Ex) \textit{What is the probability of rolling a die and getting a $2$ or a $4$?} You can't roll both at once, so the answer is $\frac{1}{6}+\frac{1}{6}=\frac{1}{3}$.
+%             \end{itemize}
+%         \end{itemize}
+%         \item $P(A|B)$ means the probability of event $A$ \textit{given} that event $B$ occurs. Then, $P(A\text{ and }B)=P(A)\cdot P(B|A)=P(B)\cdot P(A|B)$.
+%         \begin{itemize}
+%             \item Ex) \textit{If two distinct single-digit positive integers are chosen randomly, what is the probability they are both odd?} Let $A$ be the event that the first number is odd and let $B$ be the event that the second number is odd. $P(A)=\frac{5}{9}$ and $P(B|A)=\frac{4}{8}=\frac{1}{2}$, so the answer is $\frac{5}{9}\cdot\frac{1}{2}=\frac{5}{18}$.
+%             \item Two events $A$ and $B$ are \textbf{independent} if they don't affect each other at all. Then, $P(A\text{ and }B)=P(A)\cdot P(B)$.
+%             \begin{itemize}
+%                 \item Ex) If you roll a die and flip a coin, the probability of getting a $5$ and heads is $\frac{1}{6}\cdot\frac{1}{2}=\frac{1}{12}$.
+%             \end{itemize}
+%         \end{itemize}
+     
+%     \end{itemize}
+    
+% \end{frame}
+
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+% \begin{block}{Example 3}
+% Yu has 12 coins, consisting of 5 pennies, 4 nickels and 3 dimes. He tosses them
+% all in the air. What is the probability that the total value of the coins that land
+% heads-up is exactly 30 cents? Express your answer as a common fraction.
+% \end{block}
+
+
+% \end{frame}
+
+% \begin{frame}[t]{Probability Problem}
+% \begin{block}{Example 3}
+% Yu has 12 coins, consisting of 5 pennies, 4 nickels and 3 dimes. He tosses them
+% all in the air. What is the probability that the total value of the coins that land
+% heads-up is exactly 30 cents? Express your answer as a common fraction.
+% \end{block}
+% First, we want to find all of the possible outcomes where the coins add up to $30$ cents. Either all or none of the pennies have to be heads-up for this to happen, so the possibilities are $(5p,1n,2d),(5p,3n,1d),(0p,0n,3d),(0p,2n,2d),\text{ and }(0p,4n,1d)$. We can use casework to count all the possibilities for each case.
+
+
+% \end{frame}
+
+% \begin{frame}[t]{Probability Problem}
+% \begin{block}{Example 3}
+% Yu has 12 coins, consisting of 5 pennies, 4 nickels and 3 dimes. He tosses them
+% all in the air. What is the probability that the total value of the coins that land
+% heads-up is exactly 30 cents? Express your answer as a common fraction.
+% \end{block}
+% First, we want to find all of the possible outcomes where the coins add up to $30$ cents. Either all or none of the pennies have to be heads-up for this to happen, so the possibilities are $(5p,1n,2d),(5p,3n,1d),(0p,0n,3d),(0p,2n,2d),\text{ and }(0p,4n,1d)$. We can use casework to count all the possibilities for each case.
+
+% We can treat the pennies, nickels, and dimes each as independent events, so therefore we can multiply these probabilities together for each case. 
+    
+% \end{frame}
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%     \end{itemize}
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 2:} (5p, 3n, 1d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(3n)=\frac{\binom{4}{3}}{2^4}=\frac{4}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%     \end{itemize}
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 2:} (5p, 3n, 1d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(3n)=\frac{\binom{4}{3}}{2^4}=\frac{4}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 3:} (0p, 0n, 3d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(0n)=\frac{\binom{4}{0}}{2^4}=\frac{1}{2^4}$. $P(3d)=\frac{\binom{3}{3}}{2^3}=\frac{1}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{1}{2^3}=\frac{1}{2^{12}}$.
+%     \end{itemize}
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 2:} (5p, 3n, 1d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(3n)=\frac{\binom{4}{3}}{2^4}=\frac{4}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 3:} (0p, 0n, 3d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(0n)=\frac{\binom{4}{0}}{2^4}=\frac{1}{2^4}$. $P(3d)=\frac{\binom{3}{3}}{2^3}=\frac{1}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{1}{2^3}=\frac{1}{2^{12}}$.
+%         \item \textbf{Case 4:} (0p, 2n, 2d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(2n)=\frac{\binom{4}{2}}{2^4}=\frac{6}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{6}{2^4}\cdot\frac{3}{2^3}=\frac{18}{2^{12}}$.
+%     \end{itemize}
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 2:} (5p, 3n, 1d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(3n)=\frac{\binom{4}{3}}{2^4}=\frac{4}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 3:} (0p, 0n, 3d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(0n)=\frac{\binom{4}{0}}{2^4}=\frac{1}{2^4}$. $P(3d)=\frac{\binom{3}{3}}{2^3}=\frac{1}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{1}{2^3}=\frac{1}{2^{12}}$.
+%         \item \textbf{Case 4:} (0p, 2n, 2d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(2n)=\frac{\binom{4}{2}}{2^4}=\frac{6}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{6}{2^4}\cdot\frac{3}{2^3}=\frac{18}{2^{12}}$.
+%         \item \textbf{Case 5:} (0p, 4n, 1d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(4n)=\frac{\binom{4}{4}}{2^4}=\frac{1}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{3}{2^3}=\frac{3}{2^{12}}$.
+%     \end{itemize}
+% \end{frame}
+
+
+
+
+% \begin{frame}[t]{Probability Problem}
+%     \begin{itemize}
+%         \item \textbf{Case 1:} (5p, 1n, 2d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(1n)=\frac{\binom{4}{1}}{2^4}=\frac{4}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 2:} (5p, 3n, 1d)\qquad $P(5p)=\frac{\binom{5}{5}}{2^5}=\frac{1}{2^5}$. $P(3n)=\frac{\binom{4}{3}}{2^4}=\frac{4}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{4}{2^4}\cdot\frac{3}{2^3}=\frac{12}{2^{12}}$.
+%         \item \textbf{Case 3:} (0p, 0n, 3d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(0n)=\frac{\binom{4}{0}}{2^4}=\frac{1}{2^4}$. $P(3d)=\frac{\binom{3}{3}}{2^3}=\frac{1}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{1}{2^3}=\frac{1}{2^{12}}$.
+%         \item \textbf{Case 4:} (0p, 2n, 2d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(2n)=\frac{\binom{4}{2}}{2^4}=\frac{6}{2^4}$. $P(2d)=\frac{\binom{3}{2}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{6}{2^4}\cdot\frac{3}{2^3}=\frac{18}{2^{12}}$.
+%         \item \textbf{Case 5:} (0p, 4n, 1d)\qquad $P(0p)=\frac{\binom{5}{0}}{2^5}=\frac{1}{2^5}$. $P(4n)=\frac{\binom{4}{4}}{2^4}=\frac{1}{2^4}$. $P(1d)=\frac{\binom{3}{1}}{2^3}=\frac{3}{2^3}$. So, the total for this case is $\frac{1}{2^5}\cdot\frac{1}{2^4}\cdot\frac{3}{2^3}=\frac{3}{2^{12}}$.
+%     \end{itemize}
+%     Adding up these mutually exclusive cases, the answer is $\frac{12+12+1+18+3}{2^{12}}=\frac{46}{2^{12}}=\frac{23}{2^{11}}=\frac{23}{2048}$.
+% \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% %------------------------------------------------
+\end{document}
